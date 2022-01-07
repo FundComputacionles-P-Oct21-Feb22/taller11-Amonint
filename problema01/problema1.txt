@@ -1,0 +1,58 @@
+1  Inicio
+2   funcion principal()
+3     tipo, i[0-3]
+4    mensaje, x(1000)[{a-z}{0-9}{BS}{A-Z}]
+5    Escribir "Ingrese 1 para calcular el valor de la planilla de luz." +
+6	" Ingrese 2 para calcular el predio de un bien inmueble."
+7    >> tipo
+8    Si (tipo == 1) entonces
+9  	mensaje = planilla_luz()
+10    De lo contrario
+11	Si(tipo == 2) entonces
+12		mensaje = predio_inmueble()
+13	De lo contrario
+14		<< "opción incorrecta"
+15    	Fin_Si
+16     Fin_Si
+17   Escribir mensaje // Se imprime la cadena correspondiente
+18  fin funcion principal 
+
+19  funcion calcularValorLuz()
+20     nombre, x(50)[{a-z}, {BS}]
+21     cedula, x(50)[{a-z}, {BS}]
+22     valor_kilo, d[0-n]
+23     numero_kilo, d[0-n]
+24     precio, d[0-n]
+25     Escribir "Ingrese nombre y apellido del cliente"
+26     Leer nombre
+27     Escribir "Ingrese número de cédula del cliente"
+28     >> cedula
+29     Escribir "Ingrese el valor por kilovatio"
+30     Leer valor_kilo
+31     Escribir "Ingrese la cantidad de kilovatio"
+32     Leer numero_kilo
+33     
+34     precio = valor_kilo * numero_kilo
+35     Escribir "Cliente " + nombre + " con cédula " + cedula + 
+36              " debe cancelar " + "el valor de $" + precio
+37  fin funcion calcularValorLuz
+38  
+39  funcion calcularPredio()
+40     nombre, x(50)[{a-z}, {BS}]
+41     cedula, x(50)[{a-z}, {BS}]
+42     valor_inmueble, d[0-n]
+43     predio, d[0-n]
+44     Escribir "Ingrese nombre y apellido del cliente"
+45     Leer nombre
+46     Escribir "Ingrese número de cédula del cliente"
+47     Leer cedula
+48     Escribir "Ingrese el valor del inmueble"
+49     Leer valor_inmueble
+50
+51     predio = valor_inmueble * 0.02
+52
+53     Escribir "Cliente " + nombre + " con cédula " + cedula +
+54              " tiene un bien inmueble valorado en " + valor_inmueble + 
+55	        "y tiene que pagar de predio $ " + predio
+56  fin funcion calcularPredio()
+57 Fin
